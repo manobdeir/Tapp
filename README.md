@@ -1,104 +1,90 @@
-Tapp
+# Marketplace Platform
 
-Tapp is a next-generation mobile application concept aiming to simplify user interactions and enhance productivity. This README provides an overview of the project, instructions for setup, and how to access the design prototypes in Figma.
+A minimal marketplace platform built with **Node.js**, **Express**, **MongoDB**, and **Docker**.
 
-Table of Contents
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Installation](#installation)
+- [Environment Variables](#environment-variables)
+- [Running the Project](#running-the-project)
+- [Running Tests](#running-tests)
+- [Figma Integration](#figma-integration)
+- [API Endpoints](#api-endpoints)
+- [License](#license)
 
-Overview
-Features
-Getting Started
-Prerequisites
-Installation
-Running the Application
-Figma Designs
-Direct Link
-Embed in GitHub Pages (Optional)
-Contributing
-License
-Overview
+## Overview
+This project provides a basic structure for a marketplace platform with authentication, a database connection, and a modular structure for scalability.
 
-Tapp is designed with a clean UI and intuitive workflows to help users accomplish tasks quickly. The overarching goals include:
+## Features
+- **User Authentication** with JWT
+- **MongoDB** for database management
+- **Express.js** as a backend framework
+- **Docker** support for easy deployment
+- **Jest** for unit testing
+- **Figma Integration** for UI/UX design collaboration
 
-Seamless onboarding
-Real-time data synchronization
-Scalable back-end architecture
-Modern, cohesive design from concept to deployment
-Features
+## Installation
+Ensure you have **Node.js v14+** and **Docker** installed.
 
-User Registration: Secure sign-up and profile management
-Service Discovery: Browse and book services through an intuitive interface
-Push Notifications: Get real-time updates and messages
-Analytics & Insights: Track user engagement and performance metrics
-Getting Started
+### Steps
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-repo/marketplace-platform.git
+   cd marketplace-platform
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Set up environment variables in `.env` (see below).
 
-Prerequisites
-Node.js (version 14 or above recommended)
-npm or yarn (for installing dependencies)
-(Optional) Docker if you plan to containerize
-Installation
-Clone the repository:
-git clone https://github.com/<YourUsername>/Tapp.git
-cd Tapp
-Install dependencies:
-npm install
-or
-yarn
-Running the Application
-npm run dev
-Or:
+## Environment Variables
+Create a `.env` file in the root directory and add the following:
+```env
+MONGODB_URI=mongodb://mongo:27017/marketplace
+JWT_SECRET=your-secret-key
+```
 
-yarn dev
-Open your browser and go to http://localhost:3000 (or the port configured in your application) to see the app in action.
+## Running the Project
+To run the project locally using Docker:
+```sh
+docker-compose up --build
+```
+Or start it with Node.js:
+```sh
+npm start
+```
+The server runs on **http://localhost:3000**.
 
-Figma Designs
+## Running Tests
+To execute tests, run:
+```sh
+npm test
+```
+Or with Docker:
+```sh
+docker-compose -f docker-compose.test.yml up --build
+```
 
-Our design prototypes are hosted on Figma, providing a clear visual reference for the project’s user interface, workflows, and style guidelines.
+## Figma Integration
+Our UI/UX design is maintained in **Figma**. To access the latest designs:
+- Visit: [Figma Marketplace UI/UX](https://www.figma.com/file/your_figma_file)
+- Collaborate with the design team by leaving comments on Figma.
+- Sync changes using the **Figma API** for automated updates.
 
-Direct Link
-Click below to open the Tapp designs in Figma (you will need access permissions to view):
+For developers, clone the Figma design assets using:
+```sh
+npm install -g figma-export
+figma-export --file your_figma_file --output ./assets
+```
 
-View Tapp on Figma
+## API Endpoints
+- **`POST /auth/signup`** - Register a new user
+- **`POST /auth/login`** - Authenticate a user
+- **`GET /products`** - Retrieve product listings
+- **`POST /products`** - Add a new product
 
-If you encounter any access restrictions, please request permission from the design team.
-Embed in GitHub Pages (Optional)
-If you want to embed the Figma prototype on a website or documentation portal (such as GitHub Pages), use an iframe. For example, create index.html in your docs/ folder with the following snippet:
+## License
+This project is licensed under the [MIT License](LICENSE).
 
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <title>Tapp Design</title>
-</head>
-<body>
-  <h1>Embedded Figma Prototype</h1>
-  <iframe
-    width="100%"
-    height="600"
-    src="https://www.figma.com/embed?embed_host=github&url=https://www.figma.com/files/team/1470929359203725284/project/337897994/Tapp?fuid=1470929357203924999"
-    allowfullscreen
-  >
-  </iframe>
-</body>
-</html>
-Then enable GitHub Pages in your repo settings to serve this page. (Note: Markdown files on GitHub do not support iframes, so you can’t embed directly in a README.)
-
-Contributing
-
-We welcome contributions from the community! Here’s how you can get involved:
-
-Fork the repository and create your own branch:
-git checkout -b feature/YourFeature
-Implement your feature or fix.
-Commit your changes:
-git commit -m "Add a cool feature or fix an issue"
-Push to your fork:
-git push origin feature/YourFeature
-Open a Pull Request detailing your changes for review.
-For major changes, open an issue first to discuss what you’d like to change.
-
-License
-
-This project is licensed under the MIT License – see the LICENSE file for details.
-
-Thanks for checking out Tapp!
-If you have any questions or feedback, feel free to open an issue or contact the team directly.
