@@ -1,0 +1,12 @@
+x
+x
+import React from 'react'; interface Props { } const Tapp: React.FC<Props> = () => {
+  return (
+    <div> </div>
+  ) } export default Tapp
+x
+^x
+XXXXXXXXXXX^X^
+R
+^R
+
